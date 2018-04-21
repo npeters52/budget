@@ -10,4 +10,4 @@ def index(request):
         'debit_list':debit_list,
         'credit_list':credit_list
     }
-    return render(request, 'checking/index.html', context)
+    return render(request, 'index.html', context)

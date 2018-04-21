@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
@@ -6,12 +8,38 @@
     <body>
         <h1>Budget</h1>
         {% if debit_list %}
-
+            <h2>Debits</h2>
+            {% for debit in debit_list %}
+                <div class="debits">
+                    <h3>
+                        {{debit.name}}
+                    </h3>
+                    <ul>
+                        <li>
+                            {{debit.amount}}
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
         {% else %}
         <p>No Debits available</p>
+        {% endif %}
         {% if credit_list %}
-
+            <h2>Credits</h2>
+            {% for credit in credit_list %}
+                <div class="credits">
+                    <h3>
+                        {{credit.name}}
+                    </h3>
+                    <ul>
+                        <li>
+                            {{credit.amount}}
+                        </li>
+                    </ul>
+                </div>
+            {% endfor %}
         {% else %}
         <p>No Credits available</p>
+        {% endif %}
     </body>
 </html>
