@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+        <title>Budget</title>
+    </head>
+    <body>
+        <h1>Budget</h1>
+        {% if debit_list %}
+
+        {% else %}
+        <p>No Debits available</p>
+        {% if credit_list %}
+
+        {% else %}
+        <p>No Credits available</p>
+    </body>
+</html>
